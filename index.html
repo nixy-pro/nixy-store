@@ -62,20 +62,22 @@
         .pricing-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            padding: 20px;
             margin: 10px;
-            flex: 1 1 220px;
             transition: transform 0.3s;
+            border: 2px solid transparent; /* Garis transparan untuk border */
+            border-radius: 15px; /* Radius pada kotak */
+            overflow: hidden; /* Menghindari elemen keluar dari border */
         }
 
         .pricing-card:hover {
             transform: scale(1.05);
             background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ff0000; /* Garis saat hover */
         }
 
         .price {
             font-size: 2em;
-            margin-bottom: 15px;
+            margin: 10px 0;
         }
 
         ul {
@@ -131,11 +133,18 @@
         .additional-titles h2 {
             margin-bottom: 20px;
         }
+
+        .pricing-wrapper {
+            border: 2px solid #ff0000; /* Garis batas di luar tabel */
+            border-radius: 15px; /* Radius pada kotak */
+            padding: 20px;
+            margin-bottom: 30px; /* Jarak antara tabel */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="pricing-table">
+        <div class="pricing-wrapper">
             <div class="pricing-card">
                 <h2>Paket Dasar</h2>
                 <p class="price">Rp20.000</p>
@@ -146,6 +155,7 @@
                 </ul>
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
+
             <div class="pricing-card">
                 <h2>Paket Menengah</h2>
                 <p class="price">Rp50.000</p>
@@ -156,6 +166,7 @@
                 </ul>
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
+
             <div class="pricing-card">
                 <h2>Paket Premium</h2>
                 <p class="price">Rp100.000</p>
@@ -168,9 +179,9 @@
             </div>
         </div>
 
-        <div class="additional-titles">
-            <h2>Paket Ekonomi</h2>
+        <div class="pricing-wrapper">
             <div class="pricing-card">
+                <h2>Paket Ekonomi</h2>
                 <p class="price">Rp15.000</p>
                 <ul>
                     <li>1 Desain</li>
@@ -180,8 +191,8 @@
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
 
-            <h2>Paket Bisnis</h2>
             <div class="pricing-card">
+                <h2>Paket Bisnis</h2>
                 <p class="price">Rp75.000</p>
                 <ul>
                     <li>4 Desain</li>
@@ -191,8 +202,8 @@
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
 
-            <h2>Paket Ultimate</h2>
             <div class="pricing-card">
+                <h2>Paket Ultimate</h2>
                 <p class="price">Rp150.000</p>
                 <ul>
                     <li>10 Desain</li>
@@ -202,8 +213,8 @@
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
 
-            <h2>Paket Spesial</h2>
             <div class="pricing-card">
+                <h2>Paket Spesial</h2>
                 <p class="price">Rp200.000</p>
                 <ul>
                     <li>15 Desain</li>
@@ -213,8 +224,8 @@
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
 
-            <h2>Paket Kreatif</h2>
             <div class="pricing-card">
+                <h2>Paket Kreatif</h2>
                 <p class="price">Rp300.000</p>
                 <ul>
                     <li>20 Desain</li>
@@ -225,6 +236,7 @@
             </div>
         </div>
     </div>
+
     <script>
         const navbar = document.getElementById('navbar');
         let lastScrollTop = 0;
@@ -239,7 +251,7 @@
                 // Scroll ke atas
                 navbar.style.transform = 'translateY(0)'; // Menampilkan navbar
             }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Untuk menanggulangi masalah negatif
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Untuk menanggulangi masalah negative scrolling
         });
     </script>
 </body>
