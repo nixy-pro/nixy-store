@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Table - Scrollable Design</title>
+    <title>Pricing Table - Gradient</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,19 +15,18 @@
             align-items: center;
             height: 100vh;
             padding: 20px;
-            overflow: hidden; /* Mencegah scrollbar body */
+            overflow: hidden;
         }
 
         .pricing-table {
             width: 100%;
             max-width: 1200px;
-            background-color: #1e1e1e;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
             border-radius: 12px;
-            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            overflow-y: auto; /* Menambahkan scroll vertikal pada tabel */
-            max-height: 600px; /* Batas tinggi untuk scroll */
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
         }
 
         h1 {
@@ -46,11 +45,11 @@
             padding: 20px;
             text-align: left;
             border-bottom: 1px solid #444;
-            overflow-wrap: break-word; /* Untuk mencegah overflow */
+            overflow-wrap: break-word;
         }
 
         th {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #ff512f, #dd2476);
             color: #ffffff;
             font-size: 1.1em;
         }
@@ -58,6 +57,7 @@
         td {
             color: #e0e0e0;
             font-size: 1em;
+            background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
         }
 
         .price {
@@ -66,41 +66,74 @@
             font-size: 1.3em;
         }
 
+        .info {
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+
         .pricing-button {
             text-decoration: none;
-            background-color: #ffc107;
+            background: linear-gradient(45deg, #ff0080, #ff8c00, #00bfff, #00ff7f);
+            background-size: 400%;
             color: #121212;
             padding: 12px 25px;
             border-radius: 6px;
             font-size: 1em;
             display: inline-block;
-            transition: background-color 0.3s ease, transform 0.2s;
-            float: right; /* Menempatkan tombol di kanan */
+            transition: background-position 0.5s ease, transform 0.2s;
+            float: right;
         }
 
         .pricing-button:hover {
-            background-color: #e0a800;
             transform: scale(1.05);
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .pricing-button {
+            animation: gradient-animation 3s ease infinite;
         }
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             th, td {
                 padding: 15px;
+                font-size: 0.9em;
             }
 
             .pricing-button {
                 padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            h1 {
+                font-size: 2em;
             }
         }
 
         @media screen and (max-width: 480px) {
             th, td {
                 padding: 10px;
+                font-size: 0.8em;
             }
 
             .pricing-button {
                 padding: 8px 15px;
+                font-size: 0.8em;
+            }
+
+            h1 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -114,64 +147,64 @@
                 <th>Paket</th>
                 <th>Fitur</th>
                 <th>Harga</th>
+                <th>Info Tambahan</th>
                 <th>Aksi</th>
-                <th>Detail</th>
             </tr>
             <tr>
                 <td>Basic</td>
                 <td>1 Website, 5GB Storage, Email Support</td>
                 <td class="price">Rp50.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Basic</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Pro</td>
                 <td>5 Websites, 20GB Storage, Premium Support, Custom Domain</td>
                 <td class="price">Rp100.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Pro</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Premium</td>
                 <td>Unlimited Websites, 50GB Storage, Priority Support, Free SSL</td>
                 <td class="price">Rp150.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Premium</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Enterprise</td>
                 <td>Unlimited Websites, 100GB Storage, Dedicated Support, Custom SSL & Domain</td>
                 <td class="price">Rp200.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Enterprise</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Ultimate</td>
                 <td>All Features, Custom Solutions, 24/7 Support</td>
                 <td class="price">Rp300.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Ultimate</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Starter</td>
                 <td>1 Website, 2GB Storage, Basic Support</td>
                 <td class="price">Rp30.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Starter</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Advanced</td>
                 <td>10 Websites, 50GB Storage, Email Support</td>
                 <td class="price">Rp120.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Advanced</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
             <tr>
                 <td>Professional</td>
                 <td>Unlimited Websites, 100GB Storage, Premium Support</td>
                 <td class="price">Rp180.000/bulan</td>
-                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
-                <td>Info Tambahan</td>
+                <td class="info">Info tentang Paket Professional</td>
+                <td><a href="http://t.me/nixy_store" class="pricing-button">Pilih Paket</a></td>
             </tr>
         </table>
     </div>
