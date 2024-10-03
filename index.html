@@ -28,11 +28,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             transition: transform 0.5s ease;
-        }
-
-        .navbar h1 {
-            font-size: 24px;
-            margin: 0;
+            text-align: center; /* Mengatur judul di tengah */
         }
 
         .container {
@@ -126,12 +122,18 @@
             transform: translateY(1px);
             box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
         }
+
+        .additional-titles {
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .additional-titles h2 {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="navbar" id="navbar">
-        <h1>Harga Layanan Kami</h1>
-    </div>
     <div class="container">
         <div class="pricing-table">
             <div class="pricing-card">
@@ -161,6 +163,39 @@
                     <li>5 Desain</li>
                     <li>Tak Terbatas Revisi</li>
                     <li>Dukungan 24/7</li>
+                </ul>
+                <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h2>Paket Ekonomi</h2>
+                <p class="price">Rp15.000</p>
+                <ul>
+                    <li>1 Desain</li>
+                    <li>1 Revisi</li>
+                    <li>Dukungan Chat</li>
+                </ul>
+                <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
+            </div>
+            <div class="pricing-card">
+                <h2>Paket Bisnis</h2>
+                <p class="price">Rp75.000</p>
+                <ul>
+                    <li>4 Desain</li>
+                    <li>3 Revisi</li>
+                    <li>Dukungan Telepon & Email</li>
+                </ul>
+                <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
+            </div>
+            <div class="pricing-card">
+                <h2>Paket Ultimate</h2>
+                <p class="price">Rp150.000</p>
+                <ul>
+                    <li>10 Desain</li>
+                    <li>Tak Terbatas Revisi</li>
+                    <li>Dukungan 24/7 + Prioritas</li>
                 </ul>
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
