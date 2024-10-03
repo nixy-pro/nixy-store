@@ -35,7 +35,14 @@
             max-width: 800px;
             margin: auto;
             padding: 80px 20px 20px; /* Padding atas disesuaikan untuk menghindari navbar */
-            text-align: center;
+        }
+
+        h1 {
+            text-align: center; /* Judul utama di tengah */
+            border-radius: 25px;
+            background: rgba(255, 0, 0, 0.5);
+            padding: 10px 0;
+            margin-bottom: 20px; /* Jarak di bawah judul utama */
         }
 
         h2 {
@@ -71,25 +78,27 @@
         .pricing-card {
             background: transparent; /* Latar belakang transparan untuk kartu */
             border-radius: 10px;
-            margin: 10px;
+            margin: 10px; /* Jarak antar kartu */
             padding: 20px; /* Padding di dalam kartu */
             transition: transform 0.3s;
-            border: 2px solid transparent; /* Garis transparan untuk border */
+            border: 2px solid #ff0000; /* Garis pada kartu */
             overflow: hidden; /* Menghindari elemen keluar dari border */
+            flex: 1 1 30%; /* Flex basis agar kartu menyusut di layar kecil */
+            position: relative; /* Untuk menempatkan border */
         }
 
         .pricing-card:hover {
             transform: scale(1.05);
             background: rgba(255, 255, 255, 0.2);
-            border: 2px solid #ff0000; /* Garis saat hover */
         }
 
-        .price {
-            font-size: 2em;
+        .title, .price {
+            font-size: 1.5em;
+            text-align: center; /* Mengatur teks di tengah */
             margin: 10px 0;
             padding: 10px;
-            border: 2px solid #ff0000; /* Garis pada harga */
-            border-radius: 10px; /* Radius pada harga */
+            border: 2px solid #ff0000; /* Garis pada judul dan harga */
+            border-radius: 10px; /* Radius pada judul dan harga */
             background: rgba(255, 255, 255, 0.2);
         }
 
@@ -102,17 +111,7 @@
         li {
             position: relative;
             padding: 10px 0; /* Padding untuk setiap item */
-        }
-
-        li::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(135deg, #ff0000, #ff7f00);
-            position: absolute;
-            left: 0;
-            bottom: 0;
+            border-bottom: 2px solid #ff0000; /* Garis bawah untuk setiap item */
         }
 
         .btn {
@@ -151,9 +150,12 @@
 </head>
 <body>
     <div class="container">
+        <h1>Harga Layanan Kami</h1> <!-- Judul utama dengan tampilan mengambang -->
+        
+        <!-- Tabel Paket 1 -->
         <div class="pricing-wrapper">
             <div class="pricing-card">
-                <h2>Paket Dasar</h2>
+                <h2 class="title">Paket Dasar</h2>
                 <p class="price">Rp20.000</p>
                 <ul>
                     <li>1 Desain</li>
@@ -164,7 +166,7 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Menengah</h2>
+                <h2 class="title">Paket Menengah</h2>
                 <p class="price">Rp50.000</p>
                 <ul>
                     <li>3 Desain</li>
@@ -175,7 +177,7 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Premium</h2>
+                <h2 class="title">Paket Premium</h2>
                 <p class="price">Rp100.000</p>
                 <ul>
                     <li>5 Desain</li>
@@ -186,9 +188,10 @@
             </div>
         </div>
 
+        <!-- Tabel Paket 2 -->
         <div class="pricing-wrapper">
             <div class="pricing-card">
-                <h2>Paket Ekonomi</h2>
+                <h2 class="title">Paket Ekonomi</h2>
                 <p class="price">Rp15.000</p>
                 <ul>
                     <li>1 Desain</li>
@@ -199,7 +202,7 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Bisnis</h2>
+                <h2 class="title">Paket Bisnis</h2>
                 <p class="price">Rp75.000</p>
                 <ul>
                     <li>4 Desain</li>
@@ -210,7 +213,7 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Ultimate</h2>
+                <h2 class="title">Paket Ultimate</h2>
                 <p class="price">Rp150.000</p>
                 <ul>
                     <li>10 Desain</li>
@@ -221,7 +224,7 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Spesial</h2>
+                <h2 class="title">Paket Spesial</h2>
                 <p class="price">Rp200.000</p>
                 <ul>
                     <li>15 Desain</li>
@@ -232,12 +235,12 @@
             </div>
 
             <div class="pricing-card">
-                <h2>Paket Kreatif</h2>
+                <h2 class="title">Paket Gold</h2>
                 <p class="price">Rp300.000</p>
                 <ul>
                     <li>20 Desain</li>
-                    <li>Tak Terbatas Revisi</li>
-                    <li>Dukungan 24/7 + Desain Khusus</li>
+                    <li>10 Revisi</li>
+                    <li>Dukungan 24/7 + Konsultasi Gratis</li>
                 </ul>
                 <a href="https://t.me/nixy_store" class="btn">Pesan Sekarang</a>
             </div>
@@ -245,7 +248,7 @@
     </div>
 
     <script>
-        const navbar = document.getElementById('navbar');
+        const navbar = document.querySelector('.navbar');
         let lastScrollTop = 0;
 
         window.addEventListener('scroll', function() {
