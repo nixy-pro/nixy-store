@@ -1,66 +1,180 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - &lt;Table&gt; Responsive</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table - Scrollable Design</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            overflow: hidden; /* Mencegah scrollbar body */
+        }
 
+        .pricing-table {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            overflow-y: auto; /* Menambahkan scroll vertikal pada tabel */
+            max-height: 600px; /* Batas tinggi untuk scroll */
+        }
+
+        h1 {
+            text-align: left;
+            color: #f5f5f5;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+            overflow-wrap: break-word; /* Untuk mencegah overflow */
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        td {
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #ffc107;
+            font-size: 1.3em;
+        }
+
+        .pricing-button {
+            text-decoration: none;
+            background-color: #ffc107;
+            color: #121212;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1em;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s;
+            float: right; /* Menempatkan tombol di kanan */
+        }
+
+        .pricing-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            th, td {
+                padding: 15px;
+            }
+
+            .pricing-button {
+                padding: 10px 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            th, td {
+                padding: 10px;
+            }
+
+            .pricing-button {
+                padding: 8px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</pan></h1>
-<h2>Created with love by <a href="https://github.com/pablorgarcia" target="_blank">Pablo García</a></h2>
 
-<table class="container">
-	<thead>
-		<tr>
-			<th><h1>Sites</h1></th>
-			<th><h1>Views</h1></th>
-			<th><h1>Clicks</h1></th>
-			<th><h1>Average</h1></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Google</td>
-			<td>9518</td>
-			<td>6369</td>
-			<td>01:32:50</td>
-		</tr>
-		<tr>
-			<td>Twitter</td>
-			<td>7326</td>
-			<td>10437</td>
-			<td>00:51:22</td>
-		</tr>
-		<tr>
-			<td>Amazon</td>
-			<td>4162</td>
-			<td>5327</td>
-			<td>00:24:34</td>
-		</tr>
-    <tr>
-			<td>LinkedIn</td>
-			<td>3654</td>
-			<td>2961</td>
-			<td>00:12:10</td>
-		</tr>
-    <tr>
-			<td>CodePen</td>
-			<td>2002</td>
-			<td>4135</td>
-			<td>00:46:19</td>
-		</tr>
-    <tr>
-			<td>GitHub</td>
-			<td>4623</td>
-			<td>3486</td>
-			<td>00:31:52</td>
-		</tr>
-	</tbody>
-</table>
-<!-- partial -->
-  <script  src="./script.js"></script>
+    <div class="pricing-table">
+        <h1>Pricing Plans</h1>
+        <table>
+            <tr>
+                <th>Paket</th>
+                <th>Fitur</th>
+                <th>Harga</th>
+                <th>Aksi</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>Basic</td>
+                <td>1 Website, 5GB Storage, Email Support</td>
+                <td class="price">Rp50.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Pro</td>
+                <td>5 Websites, 20GB Storage, Premium Support, Custom Domain</td>
+                <td class="price">Rp100.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>Unlimited Websites, 50GB Storage, Priority Support, Free SSL</td>
+                <td class="price">Rp150.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Enterprise</td>
+                <td>Unlimited Websites, 100GB Storage, Dedicated Support, Custom SSL & Domain</td>
+                <td class="price">Rp200.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Ultimate</td>
+                <td>All Features, Custom Solutions, 24/7 Support</td>
+                <td class="price">Rp300.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Starter</td>
+                <td>1 Website, 2GB Storage, Basic Support</td>
+                <td class="price">Rp30.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Advanced</td>
+                <td>10 Websites, 50GB Storage, Email Support</td>
+                <td class="price">Rp120.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+            <tr>
+                <td>Professional</td>
+                <td>Unlimited Websites, 100GB Storage, Premium Support</td>
+                <td class="price">Rp180.000/bulan</td>
+                <td><a href="#" class="pricing-button">Pilih Paket</a></td>
+                <td>Info Tambahan</td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
