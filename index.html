@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8"> <!-- Ubah scale menjadi 0.8 untuk ukuran lebih kecil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Menjaga tampilan desktop di HP -->
     <title>Pricing Table - Gradient</title>
     <style>
         body {
@@ -20,19 +20,20 @@
 
         .pricing-table {
             width: 100%;
-            max-width: 1000px; /* Mengurangi lebar maksimum */
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            max-width: 1000px; /* Maksimum lebar */
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             padding: 20px;
             overflow-y: auto;
             max-height: 600px; /* Batasi tinggi tabel */
+            background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradasi bergerak */
+            animation: gradient-animation 3s ease infinite;
         }
 
         h1 {
             text-align: left;
             color: #f5f5f5;
-            font-size: 2em; /* Mengurangi ukuran judul */
+            font-size: 2em;
             margin-bottom: 30px;
         }
 
@@ -42,7 +43,7 @@
         }
 
         th, td {
-            padding: 15px; /* Mengurangi padding sel */
+            padding: 15px;
             text-align: left;
             border-bottom: 1px solid #444;
             overflow-wrap: break-word;
@@ -63,7 +64,7 @@
         .price {
             font-weight: bold;
             color: #ffc107;
-            font-size: 1.2em; /* Mengurangi ukuran harga */
+            font-size: 1.2em;
         }
 
         .info {
@@ -76,7 +77,7 @@
             background: linear-gradient(45deg, #ff0080, #ff8c00, #00bfff, #00ff7f);
             background-size: 400%;
             color: #121212;
-            padding: 12px 20px; /* Mengurangi padding tombol */
+            padding: 12px 20px;
             border-radius: 6px;
             font-size: 1em;
             display: inline-block;
@@ -100,40 +101,36 @@
             }
         }
 
-        .pricing-button {
-            animation: gradient-animation 3s ease infinite;
-        }
-
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             th, td {
-                padding: 10px; /* Mengurangi padding pada perangkat kecil */
-                font-size: 0.9em; /* Mengurangi ukuran font */
+                padding: 10px;
+                font-size: 1em; /* Tetap ukuran font */
             }
 
             .pricing-button {
-                padding: 10px 15px; /* Mengurangi padding tombol */
-                font-size: 0.9em; /* Mengurangi ukuran font tombol */
+                padding: 10px 15px;
+                font-size: 1em; /* Tetap ukuran font tombol */
             }
 
             h1 {
-                font-size: 1.5em; /* Mengurangi ukuran judul */
+                font-size: 1.8em; /* Ukuran judul */
             }
         }
 
         @media screen and (max-width: 480px) {
             th, td {
-                padding: 8px; /* Mengurangi padding lebih lanjut */
-                font-size: 0.8em; /* Mengurangi ukuran font lebih lanjut */
+                padding: 8px; /* Mengurangi padding pada perangkat kecil */
+                font-size: 1em; /* Ukuran font tetap */
             }
 
             .pricing-button {
-                padding: 8px 10px; /* Mengurangi padding tombol lebih lanjut */
-                font-size: 0.8em; /* Mengurangi ukuran font tombol lebih lanjut */
+                padding: 8px 10px; /* Mengurangi padding tombol */
+                font-size: 1em; /* Ukuran font tombol tetap */
             }
 
             h1 {
-                font-size: 1.2em; /* Mengurangi ukuran judul lebih lanjut */
+                font-size: 1.5em; /* Ukuran judul */
             }
         }
     </style>
