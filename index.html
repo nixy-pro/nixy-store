@@ -41,6 +41,7 @@
         h2 {
             margin-bottom: 10px;
             position: relative;
+            padding-bottom: 10px;
         }
 
         h2::after {
@@ -59,13 +60,21 @@
             flex-wrap: wrap;
         }
 
-        .pricing-card {
+        .pricing-wrapper {
+            border: 2px solid #ff0000; /* Garis batas di luar tabel */
+            border-radius: 15px; /* Radius pada kotak */
+            padding: 20px;
+            margin-bottom: 30px; /* Jarak antara tabel */
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card {
+            background: transparent; /* Latar belakang transparan untuk kartu */
             border-radius: 10px;
             margin: 10px;
+            padding: 20px; /* Padding di dalam kartu */
             transition: transform 0.3s;
             border: 2px solid transparent; /* Garis transparan untuk border */
-            border-radius: 15px; /* Radius pada kotak */
             overflow: hidden; /* Menghindari elemen keluar dari border */
         }
 
@@ -78,17 +87,21 @@
         .price {
             font-size: 2em;
             margin: 10px 0;
+            padding: 10px;
+            border: 2px solid #ff0000; /* Garis pada harga */
+            border-radius: 10px; /* Radius pada harga */
+            background: rgba(255, 255, 255, 0.2);
         }
 
         ul {
             list-style: none;
-            margin-bottom: 20px;
+            margin: 20px 0; /* Margin atas dan bawah */
             padding: 0;
         }
 
         li {
             position: relative;
-            padding: 5px 0;
+            padding: 10px 0; /* Padding untuk setiap item */
         }
 
         li::after {
@@ -113,6 +126,7 @@
             position: relative;
             display: inline-block;
             text-decoration: none; /* Menghilangkan garis bawah pada link */
+            margin-top: 10px; /* Memberikan jarak di atas tombol */
         }
 
         .btn:hover {
@@ -132,13 +146,6 @@
 
         .additional-titles h2 {
             margin-bottom: 20px;
-        }
-
-        .pricing-wrapper {
-            border: 2px solid #ff0000; /* Garis batas di luar tabel */
-            border-radius: 15px; /* Radius pada kotak */
-            padding: 20px;
-            margin-bottom: 30px; /* Jarak antara tabel */
         }
     </style>
 </head>
@@ -242,16 +249,14 @@
         let lastScrollTop = 0;
 
         window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > lastScrollTop) {
-                // Scroll ke bawah
                 navbar.style.transform = 'translateY(-100%)'; // Menghilangkan navbar
             } else {
-                // Scroll ke atas
                 navbar.style.transform = 'translateY(0)'; // Menampilkan navbar
             }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Untuk menanggulangi masalah negative scrolling
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>
